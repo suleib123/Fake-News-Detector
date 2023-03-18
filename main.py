@@ -44,6 +44,22 @@ class BayesClassifier:
                 self.update_dict(text_token, self.fake_freqs)
         true_csv.close()
 
+        with open("fake_or_real_news.csv", "r", encoding="utf-8") as new_data:
+            csv_reader = csv.reader(new_data)
+            next(csv_reader)
+            for line in csv_reader:
+                title = line[0]
+                text = line[1]
+                title_token = self.tokenize(title)
+                title_text = self.tokenize(text)
+                if line[3] == "FAKE":
+                    self.update_dict(title_token, self.fake_freqs)
+                    self.update_dict(title_text, self.fake_freqs)
+                elif line[3] == "REAL":
+                    self.update_dict(title_token, self.real_freqs)
+                    self.update_dict(title_text, self.real_freqs)
+        new_data.close()
+
         # Uncomment later
         self.save_dict(self.real_freqs, self.real_filename)
         self.save_dict(self.fake_freqs, self.fake_filename)
@@ -158,7 +174,6 @@ class BayesClassifier:
 b = BayesClassifier()
 real_news = ""
 fake_news = ""
-
 
 print(b.classify(real_news))
 print(b.classify(fake_news))
