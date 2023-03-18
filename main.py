@@ -156,4 +156,9 @@ class BayesClassifier:
                 freqs[word] =  1
 
 b = BayesClassifier()
-print(b.classify(""))
+real_news = "Pfizer Vaccine Proven Effective in Preventing Covid-19"
+fake_news = "ISIS supporter busted in terrifying plot against St. Patrick's Day parade"
+
+
+print(b.classify(real_news))
+print(b.classify(fake_news))
