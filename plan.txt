@@ -1,0 +1,15 @@
+Plan: use naive bayes to create a dictionary of keywords for fake news and real news sources.
+
+1) transfer the naive bayes classify methods
+2) translate naive bayes methods to this use case
+3) find training data for the model
+4) train and test the model
+5) Once the model seems to working, uncomment the pickle methods
+6) further train the model
+7) Now that the model works, find out how to do scraping
+8) take user input of url of news to check
+
+**Important Note: try scraping from real and fake news websites in order to train the model**
+ - Maybe make new project to explore scraping from news articles(maybe make one file for real scraped data and one for fake scraped data)
+
+# Possible training data: https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset?select=Fake.csv 
