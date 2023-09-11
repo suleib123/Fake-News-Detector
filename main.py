@@ -172,8 +172,11 @@ class BayesClassifier:
                 freqs[word] =  1
 
 b = BayesClassifier()
-real_news = ""
-fake_news = ""
+
+real_news = "Trump arrested, booked and released at Fulton County Jail"
+# ^Source: NBC News^
+fake_news = "Smithsonian Acquires Giant Catapult Harriet Tubman Used To Launch Slaves To Freedom"
+# ^Source: The Onion^
 
 print(b.classify(real_news))
 print(b.classify(fake_news))
